@@ -1,0 +1,46 @@
+{
+  "100": {
+    "messages": [
+      {
+        "title": "Hola guapa, buenos días :)",
+        "body": "Espero que te la estes pasando muy bien. Te deseo lo mejor y que cumplas muchos años más.",
+        "backgroundColor": "#536DFE",
+        "icon": "cake"
+      },
+      {
+        "title": "Feliz cumpleaños!!!",
+        "body": "Que te la hayas pasado excelente",
+        "backgroundColor": "#4CAF50",
+        "icon": "plane"
+      },
+      {
+        "title": "Feliz cumpleaños!!!",
+        "body": "Que cumplas todos los objectivos que te propongas",
+        "backgroundColor": "#F44336",
+        "icon": "happy"
+      }
+    ],
+    "errorMessages": [
+      "Hoy no es tu cumpleaños"
+    ]
+  },
+  "101": {
+    "messages": [
+      {
+        "title": "Feliz cumpleaños!!!",
+        "body": "Espero que te la estes pasando muy bien. Te deseo lo mejor y que cumplas muchos años más.",
+        "backgroundColor": "#536DFE",
+        "icon": "cake"
+      },
+      {
+        "title": "Feliz cumpleaños!!!",
+        "body": "Espero que te la estes pasando muy bien. Te deseo lo mejor y que cumplas muchos años más.",
+        "backgroundColor": "#536DFE",
+        "icon": "cake"
+      }
+    ],
+    "errorMessages": [
+      "Hoy no es tu cumpleaños"
+    ]
+  }
+}
