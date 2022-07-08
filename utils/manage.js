@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import data from '../../utils/data.json';
+import data from './data.json';
 
 import { useState } from 'react';
 
