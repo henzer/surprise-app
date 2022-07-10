@@ -20,6 +20,7 @@
         "icon": "happy"
       }
     ],
+    "birthday": "2022-07-11T00:00:00-06:00",
     "errorMessages": [
       "Hoy no es tu cumpleaños"
     ]
@@ -33,6 +34,7 @@
         "icon": "cake"
       }
     ],
+    "birthday": "2022-07-10T00:00:00-06:00",
     "errorMessages": [
       "Hoy no es tu cumpleaños"
     ]

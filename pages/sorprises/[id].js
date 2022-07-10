@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { MdCake, MdEmojiEmotions, MdFlightTakeoff, MdInfo, MdStarRate, MdReportProblem } from "react-icons/md";
 import Counter from '../../components/counter';
 import cn from 'classnames';
+import RestrictedPage from '../../components/RestrictedPage';
 
 const iconMap = {
   'cake': <MdCake size='5em' color='white'/>,
@@ -20,7 +21,7 @@ const getIcon = (icon) => iconMap[icon];
 const Surprise = (props) => {
   const router = useRouter();
   const { id } = router.query;
-  const { messages } = props;
+  const { messages, birthday } = props;
   const [active, setActive] = useState(0);
   const total = messages.length;
 
@@ -85,7 +86,16 @@ const Surprise = (props) => {
     'd-none': total === 1,
   });
 
-  // return messages.map((message, index) => (<p key={index}>{message}</p>));
+  const birthdayDate = new Date(birthday);
+  const today = new Date();
+  const diffSeconds = Math.trunc((today - birthdayDate)/1000);
+  const oneDay = 24 * 60 * 60 * 1000;
+  if (diffSeconds < 0 || diffSeconds > (60 * 60 * 24) ) {
+    return (
+      <RestrictedPage birthday={birthdayDate}/>
+    );
+  }
+
   return (
     <>
       <div id="carouselControls" className='carousel slide' data-ride='carousel' style={styleFullScreen}>
