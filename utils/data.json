@@ -20,9 +20,12 @@
         "icon": "happy"
       }
     ],
-    "birthday": "2022-07-11T00:00:00-06:00",
+    "birthday": "2022-07-10T17:00:00-06:00",
     "errorMessages": [
-      "Hoy no es tu cumpleaños"
+      {
+        "title": "¿Haciendo trampa?",
+        "message": "¡Hoy no es tu cumpleaños! lo siento, pero tienes que esperar:"
+      }
     ]
   },
   "101": {
@@ -36,7 +39,10 @@
     ],
     "birthday": "2022-07-10T00:00:00-06:00",
     "errorMessages": [
-      "Hoy no es tu cumpleaños"
+      {
+        "title": "¿Haciendo trampa?",
+        "message": "¡Hoy no es tu cumpleaños! lo siento, pero tienes que esperar:"
+      }
     ]
   }
 }

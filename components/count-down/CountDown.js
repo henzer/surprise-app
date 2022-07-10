@@ -4,7 +4,7 @@ import style from './style.module.css';
 import { MdOutlineLockClock } from 'react-icons/md';
 import Square from '../square/square';
 
-const CountDown = ({ birthday }) => {
+const CountDown = ({ birthday, title, message }) => {
   const {
     seconds,
     minutes,
@@ -38,11 +38,11 @@ const CountDown = ({ birthday }) => {
     <div className={`text-center ${style.container}`}>
       <div className='mb-4 px-4'>
         <div className='mb-3'><MdOutlineLockClock size='5em' color='white'/></div>
-        <h1 className='display-3'>¿Haciendo trampa?</h1>
-        <p className='mb-3 lead'>Para poder ver la sorpresa, debes esperar:</p>
+        <h1 className='display-3'>{title}</h1>
+        <p className='mb-3 lead'>{message}</p>
         <div className='d-flex justify-content-center'>
           <Square number={days} label="DIA"/>
-          <Square number={formatNumber(minutes)} label="HORA" />
+          <Square number={formatNumber(hours)} label="HORA" />
           <Square number={formatNumber(minutes)} label="MIN" />
           <Square number={formatNumber(seconds)} label="SEG" />
         </div>

@@ -21,7 +21,7 @@ const getIcon = (icon) => iconMap[icon];
 const Surprise = (props) => {
   const router = useRouter();
   const { id } = router.query;
-  const { messages, birthday } = props;
+  const { messages, birthday, errorMessages } = props;
   const [active, setActive] = useState(0);
   const total = messages.length;
 
@@ -89,10 +89,12 @@ const Surprise = (props) => {
   const birthdayDate = new Date(birthday);
   const today = new Date();
   const diffSeconds = Math.trunc((today - birthdayDate)/1000);
-  const oneDay = 24 * 60 * 60 * 1000;
   if (diffSeconds < 0 || diffSeconds > (60 * 60 * 24) ) {
     return (
-      <RestrictedPage birthday={birthdayDate}/>
+      <RestrictedPage
+        birthday={birthdayDate}
+        errorMessages={errorMessages}
+        />
     );
   }
 
