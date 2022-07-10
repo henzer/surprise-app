@@ -1,5 +1,3 @@
-import countItDown from 'count-it-down';
-import { useEffect,useState } from "react";
 import { useTimer } from 'react-timer-hook';
 
 import style from './style.module.css';
