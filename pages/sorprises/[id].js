@@ -3,6 +3,8 @@ import data from '../../utils/data.json';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from 'react';
 import { MdCake, MdEmojiEmotions, MdFlightTakeoff, MdInfo, MdStarRate, MdReportProblem } from "react-icons/md";
+import Counter from '../../components/counter';
+import cn from 'classnames';
 
 const iconMap = {
   'cake': <MdCake size='5em' color='white'/>,
@@ -20,6 +22,7 @@ const Surprise = (props) => {
   const { id } = router.query;
   const { messages } = props;
   const [active, setActive] = useState(0);
+  const total = messages.length;
 
   const styleFullScreen = {
     position: 'absolute',
@@ -34,7 +37,7 @@ const Surprise = (props) => {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
-    margin: '0 50px'
+    margin: '0 40px'
   };
 
   const clickRight = () => {
@@ -73,18 +76,28 @@ const Surprise = (props) => {
     });
   };
 
+  const controlClassesPrev = cn({
+    'carousel-control-prev': true,
+    'd-none': total === 1,
+  });
+  const controlClassesNext = cn({
+    'carousel-control-next': true,
+    'd-none': total === 1,
+  });
+
   // return messages.map((message, index) => (<p key={index}>{message}</p>));
   return (
     <>
       <div id="carouselControls" className='carousel slide' data-ride='carousel' style={styleFullScreen}>
         <div className='carousel-inner' style={styleFullScreen}>
           {getItems()}
-          <a className="carousel-control-prev" href="#" onClick={() => clickRight()} role="button" data-slide="prev">
+          <a className={controlClassesPrev} href="#" onClick={() => clickLeft()} role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" ariaidden="true"></span>
           </a>
-          <a className="carousel-control-next" href="#" onClick={() => clickRight()} role="button" data-slide="next">
+          <a className={controlClassesNext} href="#" onClick={() => clickRight()} role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
           </a>
+          <Counter current={active + 1} total={total} />
         </div>
       </div>
     </>
