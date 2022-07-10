@@ -2,6 +2,7 @@ import { useTimer } from 'react-timer-hook';
 
 import style from './style.module.css';
 import { MdOutlineLockClock } from 'react-icons/md';
+import Square from '../square/square';
 
 const CountDown = ({ birthday }) => {
   const {
@@ -35,15 +36,16 @@ const CountDown = ({ birthday }) => {
 
   return (
     <div className={`text-center ${style.container}`}>
-      <div className='mb-4'>
+      <div className='mb-4 px-4'>
         <div className='mb-3'><MdOutlineLockClock size='5em' color='white'/></div>
-        <h1 className='display-4'>¿Haciendo trampa?</h1>
-        <p>Para poder ver la sorpresa, debes esperar:</p>
-        <p>
-          <span className='display-4'>
-            {`${days} : ${formatNumber(hours)} : ${formatNumber(minutes)} : ${formatNumber(seconds)}`}
-          </span>
-        </p>
+        <h1 className='display-3'>¿Haciendo trampa?</h1>
+        <p className='mb-3 lead'>Para poder ver la sorpresa, debes esperar:</p>
+        <div className='d-flex justify-content-center'>
+          <Square number={days} label="DIA"/>
+          <Square number={formatNumber(minutes)} label="HORA" />
+          <Square number={formatNumber(minutes)} label="MIN" />
+          <Square number={formatNumber(seconds)} label="SEG" />
+        </div>
       </div>
     </div>
   );
