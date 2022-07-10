@@ -77,17 +77,12 @@ const Surprise = (props) => {
   return (
     <>
       <div id="carouselControls" className='carousel slide' data-ride='carousel' style={styleFullScreen}>
-        <ol className="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
         <div className='carousel-inner' style={styleFullScreen}>
           {getItems()}
-          <a className="carousel-control-prev" href="#carouselExampleControls" onClick={() => clickRight()} role="button" data-slide="prev">
+          <a className="carousel-control-prev" href="#" onClick={() => clickRight()} role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" ariaidden="true"></span>
           </a>
-          <a className="carousel-control-next" href="#carouselExampleControls" onClick={() => clickRight()} role="button" data-slide="next">
+          <a className="carousel-control-next" href="#" onClick={() => clickRight()} role="button" data-slide="next">
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
           </a>
         </div>
