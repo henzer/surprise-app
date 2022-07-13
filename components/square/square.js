@@ -4,7 +4,7 @@ const Square = ({ number, label }) => {
   return (
     <div className='d-flex flex-column'>
       <div className={`mx-1 ${style.square}`}>
-        <span className='display-4'>{number}</span>
+        <span className={style.number}>{number}</span>
       </div>
       <div>
         <span className={style.small}>
